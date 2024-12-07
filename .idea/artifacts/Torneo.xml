@@ -1,0 +1,6 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Torneo">
+    <output-path>$PROJECT_DIR$/out/artifacts/Torneo</output-path>
+    <root id="archive" name="Torneo.war" />
+  </artifact>
+</component>

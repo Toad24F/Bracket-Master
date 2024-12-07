@@ -1,0 +1,290 @@
+/* Barra de navegación */
+.navbar {
+    background-color: #333;
+    padding: 0.5rem;
+}
+
+/* Estilo para el logo */
+.navbar-brand img {
+    width: 100px; /* Ajusta este valor para controlar el tamaño */
+    height: auto;
+}
+
+/* Botones de navegación */
+.navbar .btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.8rem;
+    color: white;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .navbar .btn {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.6rem;
+    }
+    .navbar-brand img {
+        width: 80px; /* Tamaño del logo en pantallas pequeñas */
+    }
+}
+@media (min-width: 992px) {
+    .navbar-expand-lg {
+        -ms-flex-flow: row nowrap;
+        flex-flow: row nowrap;
+        -ms-flex-pack: start;
+        justify-content: space-between;
+    }
+}
+
+/* Modal ajustado a pantallas pequeñas */
+.modal-dialog {
+    max-width: 90%; /* Ajusta el ancho del modal para dispositivos móviles */
+}
+/*Es invalido*/
+.is-invalid {
+    border-color: red;
+}
+.invalid-feedback {
+    color: red;
+    font-size: 0.9rem;
+}
+
+/* Animación de Crecimiento */
+.btn:hover, .btn-circle:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease-in-out;
+    background-color: #999999;
+}
+.modal-body .button-container {
+    text-align: right; /* Alinea el botón a la derecha */
+}
+.modal.fade .modal-dialog {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 100vh; 
+        width: 80%;
+        max-width: 300px;
+        margin: 1.75rem auto;/* Para asegurarte de que el modal se centre incluso en pantallas altas */
+}
+/* Animación para los botones de opciones en el modal de configuración */
+.modal-body .btn {
+    width: 100%;
+    transition: transform 0.2s ease-in-out;
+}
+
+.modal-body .btn:hover {
+    transform: scale(1.02);
+}
+/* Estilo del botón circular */
+.btn-circle {
+    width: 100px;
+    height: 50px;
+    background-color: #999999;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+/* Estilo del popup de usuario tipo dropdown */
+#userSettingsMenu {
+    position: absolute;
+    display: none; /* Oculto por defecto */
+    top: 85px; /* Ajusta según la posición deseada */
+    right: 0;
+    width: 270px;
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px; 
+   background-color: white;
+}
+
+/* Mostrar el menú cuando el botón es clicado */
+#userButtonContainer :focus + #userSettingsMenu {
+    display: flow;
+}
+
+/* Estilo para las opciones del popup */
+#userSettingsMenu a.dropdown-item,
+#userSettingsMenu button.dropdown-item {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    transition: transform 0.2s;
+}
+
+#userSettingsMenu a.dropdown-item:hover,
+#userSettingsMenu button.dropdown-item:hover {
+    transform: scale(1.05);
+}/* Estilo de la barra lateral */
+.sidebar {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 80px; /* Ancho cuando está plegada */
+    background-color: #333;
+    overflow: hidden;
+    transition: width 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    color: white;
+}
+
+/* Barra expandida */
+.sidebar.expanded {
+    width: 240px; /* Ancho cuando está expandida */
+}
+
+/* Estilo del botón de menú */
+.sidebar-toggle {
+    width: 100%;
+    padding: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+}
+/* Contenido principal */
+.main-content {
+    margin-left: 80px; /* Margen igual al ancho de la barra lateral */
+    transition: margin-left 0.3s ease; /* Para animar el margen al expandir la barra */
+}
+
+/* Ícono de menú */
+.menu-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* Contenedor de juegos */
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Estilo de cada elemento de juego */
+.game-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    justify-content: center;
+}
+.sidebar.expanded .game-item {
+    justify-content: flex-start;
+}
+.torneo-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    justify-content: center;
+}
+.sidebar.expanded .torneo-item {
+    justify-content: flex-start;
+}
+.game-item:hover {
+    background-color: #383838;
+}
+.torneo-item:hover {
+    background-color: #383838;
+}
+
+/* Estilo de los íconos de juegos */
+.game-icon {
+    height: 35px;
+}
+
+/* Estilo de los nombres de juegos */
+.game-name {
+    margin-left: 20px;
+    font-size: 1rem;
+    display: none; /* Oculto cuando la barra está plegada */
+}
+
+/* Mostrar los nombres de juegos cuando la barra está expandida */
+.sidebar.expanded .game-name {
+    display: inline;
+}
+
+.game-section {
+    margin-bottom: 20px;
+}
+
+.tournament-list {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto; /* Permite el desplazamiento horizontal */
+    padding: 10px;
+    scroll-snap-type: x mandatory; /* Para una mejor experiencia de desplazamiento en móviles */
+}
+
+/* Tarjetas individuales */
+.tournament-card {
+    min-width: 200px; /* Asegura un tamaño mínimo para cada tarjeta */
+    flex-shrink: 0; /* Evita que la tarjeta cambie de tamaño */
+    width: 200px; /* Ancho fijo */
+    margin: 10px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    text-align: center;
+}
+.tournament-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.tournament-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+#Name_Torneo{
+    color: #f8f9fa;
+    text-decoration: #f8f9fa;
+}
+.tournament-card .tournament-info {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+.tournament-info {
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+/* Contenedor general */
+.page-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+/* Barra lateral */
+.sidebar {
+    width: 80px; /* Ancho cuando está plegada */
+    background-color: #333;
+    transition: width 0.3s ease;
+    flex-shrink: 0; /* Para que no se reduzca en tamaño */
+    z-index: 1000;
+}
+
+.sidebar.expanded {
+    width: 240px; /* Ancho cuando está expandida */
+}
+
+/* Contenido principal */
+.main-content {
+    flex-grow: 1; /* Toma el espacio restante */
+    padding: 20px; /* Espaciado interno para el contenido */
+}

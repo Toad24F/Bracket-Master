@@ -1,0 +1,155 @@
+/* Barra de navegación */
+.navbar {
+    background-color: #333;
+    padding: 0.5rem;
+    justify-content: space-between;
+}
+
+/* Estilo para el logo */
+.navbar-brand img {
+    width: 100px; /* Ajusta este valor para controlar el tamaño */
+    height: auto;
+}
+
+/* Botones de navegación */
+.navbar .btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.8rem;
+    color: white;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .navbar .btn {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.6rem;
+    }
+    .navbar-brand img {
+        width: 80px; /* Tamaño del logo en pantallas pequeñas */
+    }
+}
+
+
+/* Modal ajustado a pantallas pequeñas */
+.modal-dialog {
+    max-width: 90%; /* Ajusta el ancho del modal para dispositivos móviles */
+}
+/*Es invalido*/
+.is-invalid {
+    border-color: red;
+}
+
+.invalid-feedback {
+    color: red;
+    font-size: 0.9rem;
+}
+
+/* Animación de Crecimiento */
+.btn:hover, .btn-circle:hover {
+    transform: scale(1.05);
+    transition: transform 0.2s ease-in-out;
+    background-color: #999999;
+}
+.modal-body .button-container {
+    text-align: right; /* Alinea el botón a la derecha */
+}
+/* Animación para los botones de opciones en el modal de configuración */
+.modal-body .btn {
+    width: 100%;
+    transition: transform 0.2s ease-in-out;
+}
+
+.modal-body .btn:hover {
+    transform: scale(1.02);
+}
+/* Estilo del botón circular */
+.btn-circle {
+    width: 100px;
+    height: 50px;
+    background-color: #999999;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+
+/* Estilo del popup de usuario tipo dropdown */
+#userSettingsMenu {
+    position: absolute;
+    display: none; /* Oculto por defecto */
+    top: 85px; /* Ajusta según la posición deseada */
+    right: 0;
+    width: 270px;
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px; 
+   background-color: white;
+}
+
+/* Mostrar el menú cuando el botón es clicado */
+#userButtonContainer :focus + #userSettingsMenu {
+    display: flow;
+}
+
+/* Estilo para las opciones del popup */
+#userSettingsMenu a.dropdown-item,
+#userSettingsMenu button.dropdown-item {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    transition: transform 0.2s;
+}
+
+#userSettingsMenu a.dropdown-item:hover,
+#userSettingsMenu button.dropdown-item:hover {
+    transform: scale(1.05);
+}
+
+/* Estilo del botón */
+.delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Contenedor del bote */
+.trash-can {
+    position: relative;
+    width: 24px;
+    height: 24px;
+}
+
+/* Cuerpo del bote */
+.trash-body {
+    width: 18px;
+    height: 20px;
+    background-color: #d9534f;
+    border-radius: 2px 2px 0 0;
+    position: absolute;
+    bottom: 0;
+    left: 3px;
+}
+
+/* Tapa del bote */
+.trash-lid {
+    width: 20px;
+    height: 6px;
+    background-color: #d9534f;
+    border-radius: 2px;
+    position: absolute;
+    top: -5px;
+    left: 2px;
+    transform-origin: bottom;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto de levantar la tapa al pasar el mouse */
+.delete-btn:hover .trash-lid {
+    transform: rotate(-30deg) translateY(-2px);
+}
+
